@@ -30,7 +30,13 @@ pod 'SDWebViewImageCache'
 
 ## Usage
 
-```
+Register the SDWebViewImageCache, when app launch.
+
+```ruby
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [NSURLProtocol registerClass:[SDWebViewCacheProtocol class]];
+    return YES;
+}
 ```
 
 ## Demo
