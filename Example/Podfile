@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SDWebViewImageCache_Example' do
+  pod 'SDWebViewImageCache', :path => '../'
+
+  target 'SDWebViewImageCache_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

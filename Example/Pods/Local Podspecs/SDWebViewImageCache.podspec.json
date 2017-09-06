@@ -1,0 +1,27 @@
+{
+  "name": "SDWebViewImageCache",
+  "version": "0.1.0",
+  "summary": "A short description of SDWebViewImageCache.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jiehu5114/SDWebViewImageCache",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jiehu5114": "hzhujie1@corp.netease.com"
+  },
+  "source": {
+    "git": "https://github.com/jiehu5114/SDWebViewImageCache.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SDWebViewImageCache/Classes/**/*",
+  "dependencies": {
+    "SDWebImage": [
+
+    ]
+  }
+}

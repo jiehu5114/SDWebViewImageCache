@@ -1,0 +1,21 @@
+PODS:
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
+  - SDWebViewImageCache (0.1.0):
+    - SDWebImage
+
+DEPENDENCIES:
+  - SDWebViewImageCache (from `../`)
+
+EXTERNAL SOURCES:
+  SDWebViewImageCache:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  SDWebViewImageCache: 5fbd3e7c660b42a2305940fbb6bc37dde4b051ea
+
+PODFILE CHECKSUM: ca7e4a3de6a67260262c8478b2f5b4330510e519
+
+COCOAPODS: 1.1.1
