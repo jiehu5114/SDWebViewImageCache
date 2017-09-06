@@ -12,6 +12,6 @@
 
 - (BOOL)isImageJpg;
 
-- (BOOL) isImagePng;
+- (BOOL)isImagePng;
 
 @end

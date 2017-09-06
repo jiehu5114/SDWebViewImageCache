@@ -9,7 +9,7 @@
     "file": "LICENSE"
   },
   "authors": {
-    "jiehu5114": "hzhujie1@corp.netease.com"
+    "jiehu5114": "jiehu5114@gmail.com"
   },
   "source": {
     "git": "https://github.com/jiehu5114/SDWebViewImageCache.git",
@@ -19,6 +19,7 @@
     "ios": "8.0"
   },
   "source_files": "SDWebViewImageCache/Classes/**/*",
+  "public_header_files": "SDWebViewImageCache/Classes/**/*.h",
   "dependencies": {
     "SDWebImage": [
 

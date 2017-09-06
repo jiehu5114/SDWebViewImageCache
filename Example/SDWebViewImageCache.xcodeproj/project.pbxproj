@@ -24,6 +24,8 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7DF462719333D8D44E7CD125 /* Pods_SDWebViewImageCache_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67F3E96CBA52447469B43FE /* Pods_SDWebViewImageCache_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		E5A7185A1F5FF3BF00C46CB9 /* ImageViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A718591F5FF3BF00C46CB9 /* ImageViewViewController.m */; };
+		E5A7185D1F5FF3D600C46CB9 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A7185C1F5FF3D600C46CB9 /* WebViewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 /* Begin PBXFileReference section */
 		283EF1FF06D8877B8A6A892A /* Pods-SDWebViewImageCache_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDWebViewImageCache_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDWebViewImageCache_Example/Pods-SDWebViewImageCache_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		34BC8AFC96280E60092AB161 /* Pods_SDWebViewImageCache_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDWebViewImageCache_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4068CD8BA595869A419D30D2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4068CD8BA595869A419D30D2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		442FA0C180735590B738A03B /* Pods-SDWebViewImageCache_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDWebViewImageCache_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDWebViewImageCache_Tests/Pods-SDWebViewImageCache_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* SDWebViewImageCache_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDWebViewImageCache_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,11 +63,15 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7E0862AE149B81D057034E46 /* SDWebViewImageCache.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SDWebViewImageCache.podspec; path = ../SDWebViewImageCache.podspec; sourceTree = "<group>"; };
+		7E0862AE149B81D057034E46 /* SDWebViewImageCache.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SDWebViewImageCache.podspec; path = ../SDWebViewImageCache.podspec; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AC32F9CBBEDC7A6A0057D6B /* Pods-SDWebViewImageCache_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDWebViewImageCache_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDWebViewImageCache_Example/Pods-SDWebViewImageCache_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B619D1D14798C2F49F40EC88 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B619D1D14798C2F49F40EC88 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CE97E21D8C27A655246C61DA /* Pods-SDWebViewImageCache_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDWebViewImageCache_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDWebViewImageCache_Tests/Pods-SDWebViewImageCache_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E5A718581F5FF3BF00C46CB9 /* ImageViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewViewController.h; sourceTree = "<group>"; };
+		E5A718591F5FF3BF00C46CB9 /* ImageViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewViewController.m; sourceTree = "<group>"; };
+		E5A7185B1F5FF3D600C46CB9 /* WebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
+		E5A7185C1F5FF3D600C46CB9 /* WebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
 		F67F3E96CBA52447469B43FE /* Pods_SDWebViewImageCache_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDWebViewImageCache_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,6 +146,10 @@
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				E5A718581F5FF3BF00C46CB9 /* ImageViewViewController.h */,
+				E5A718591F5FF3BF00C46CB9 /* ImageViewViewController.m */,
+				E5A7185B1F5FF3D600C46CB9 /* WebViewViewController.h */,
+				E5A7185C1F5FF3D600C46CB9 /* WebViewViewController.m */,
 			);
 			name = "Example for SDWebViewImageCache";
 			path = SDWebViewImageCache;
@@ -395,6 +405,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* SDAppDelegate.m in Sources */,
+				E5A7185A1F5FF3BF00C46CB9 /* ImageViewViewController.m in Sources */,
+				E5A7185D1F5FF3D600C46CB9 /* WebViewViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* SDViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

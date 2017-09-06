@@ -11,17 +11,18 @@
 @implementation NSURL (SDWebViewCache)
 
 - (BOOL)isImageJpg {
-    
+
     if([[self.pathExtension lowercaseString] isEqualToString:@"jpg"] ||
-       [[self.pathExtension lowercaseString] isEqualToString:@"jpeg"])
+       [[self.pathExtension lowercaseString] isEqualToString:@"jpeg"]) {
         return YES;
+    }
     return NO;
 }
 
-
 - (BOOL)isImagePng{
-    if([[self.pathExtension lowercaseString] isEqualToString:@"png"])
+    if([[self.pathExtension lowercaseString] isEqualToString:@"png"]) {
         return YES;
+    }
     return NO;
 }
 

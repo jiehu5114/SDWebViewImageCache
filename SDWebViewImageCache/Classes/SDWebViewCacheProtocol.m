@@ -42,6 +42,9 @@ static NSString * const SDWebViewRequestHasInitKey = @"sdwebviewcache.hasinit.ke
     return NO;
 }
 
++ (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
+    return request;
+}
 
 - (void)startLoading {
     NSMutableURLRequest *mutableReqeust = [[self request] mutableCopy];
@@ -54,10 +57,11 @@ static NSString * const SDWebViewRequestHasInitKey = @"sdwebviewcache.hasinit.ke
                                                                           if (error == nil && image !=nil) {
                                                                               //成功下载并缓存
                                                                               NSData *data ;
-                                                                              if([mutableReqeust.URL isImageJpg])
+                                                                              if([mutableReqeust.URL isImageJpg]) {
                                                                                   data = UIImageJPEGRepresentation(image,1);
-                                                                              else if([mutableReqeust.URL isImagePng])
+                                                                              } else if([mutableReqeust.URL isImagePng]) {
                                                                                   data = UIImagePNGRepresentation(image);
+                                                                              }
                                                                               if (data) {
                                                                                   NSURLResponse *response = [[NSURLResponse alloc] initWithURL:mutableReqeust.URL
                                                                                                                                       MIMEType:[NSData sw_contentTypeForImageData:data]
@@ -80,7 +84,6 @@ static NSString * const SDWebViewRequestHasInitKey = @"sdwebviewcache.hasinit.ke
                                                                               //图片下载失败
                                                                               [self.client URLProtocol:self didFailWithError:error];
                                                                           }
-                                                                          
                                                                           //清空标志位
                                                                           [NSURLProtocol removePropertyForKey:SDWebViewRequestHasInitKey inRequest:mutableReqeust];
                                                                       }];

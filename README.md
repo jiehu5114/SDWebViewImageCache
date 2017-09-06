@@ -5,11 +5,18 @@
 [![License](https://img.shields.io/cocoapods/l/SDWebViewImageCache.svg?style=flat)](http://cocoapods.org/pods/SDWebViewImageCache)
 [![Platform](https://img.shields.io/cocoapods/p/SDWebViewImageCache.svg?style=flat)](http://cocoapods.org/pods/SDWebViewImageCache)
 
+SDWebViewImageCache is used to share image resourece in native SDImageCache with UIWebView, which is based on SDWebImage.
+
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+* SDWebImage
+* UIWebview
+
 
 ## Installation
 
@@ -20,9 +27,18 @@ it, simply add the following line to your Podfile:
 pod 'SDWebViewImageCache'
 ```
 
-## Author
 
-jiehu5114, jiehu5114@gmail.com
+## Usage
+
+```
+```
+
+## Demo
+
+For the same Image in iamgeview and webview, just download one time.
+
+
+
 
 ## License
 

@@ -2,6 +2,8 @@
 #import <UIKit/UIKit.h>
 #endif
 
+#import "NSData+SDWebViewCache.h"
+#import "NSURL+SDWebViewCache.h"
 #import "SDWebViewCacheProtocol.h"
 
 FOUNDATION_EXPORT double SDWebViewImageCacheVersionNumber;
