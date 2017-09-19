@@ -50,43 +50,46 @@ static NSString * const SDWebViewRequestHasInitKey = @"sdwebviewcache.hasinit.ke
     NSMutableURLRequest *mutableReqeust = [[self request] mutableCopy];
     [NSURLProtocol setProperty:@YES forKey:SDWebViewRequestHasInitKey inRequest:mutableReqeust];
     
-    self.sdImageOperation = [[SDWebImageManager sharedManager] loadImageWithURL:self.request.URL
-                                                                        options:SDWebImageRetryFailed
-                                                                       progress:nil
-                                                                      completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-                                                                          if (error == nil && image !=nil) {
-                                                                              //成功下载并缓存
-                                                                              NSData *data ;
-                                                                              if([mutableReqeust.URL isImageJpg]) {
-                                                                                  data = UIImageJPEGRepresentation(image,1);
-                                                                              } else if([mutableReqeust.URL isImagePng]) {
-                                                                                  data = UIImagePNGRepresentation(image);
-                                                                              }
-                                                                              if (data) {
-                                                                                  NSURLResponse *response = [[NSURLResponse alloc] initWithURL:mutableReqeust.URL
-                                                                                                                                      MIMEType:[NSData sw_contentTypeForImageData:data]
-                                                                                                                         expectedContentLength:data.length
-                                                                                                                              textEncodingName:nil];
-                                                                                  [self.client URLProtocol:self
-                                                                                        didReceiveResponse:response
-                                                                                        cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-                                                                                  
-                                                                                  [self.client URLProtocol:self didLoadData:data];
-                                                                                  [self.client URLProtocolDidFinishLoading:self];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.sdImageOperation = [[SDWebImageManager sharedManager] loadImageWithURL:self.request.URL
+                                                                            options:SDWebImageRetryFailed
+                                                                           progress:nil
+                                                                          completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+                                                                              if (error == nil && image !=nil) {
+                                                                                  //成功下载并缓存
+                                                                                  NSData *data ;
+                                                                                  if([mutableReqeust.URL isImageJpg]) {
+                                                                                      data = UIImageJPEGRepresentation(image,1);
+                                                                                  } else if([mutableReqeust.URL isImagePng]) {
+                                                                                      data = UIImagePNGRepresentation(image);
+                                                                                  }
+                                                                                  if (data) {
+                                                                                      NSURLResponse *response = [[NSURLResponse alloc] initWithURL:mutableReqeust.URL
+                                                                                                                                          MIMEType:[NSData sw_contentTypeForImageData:data]
+                                                                                                                             expectedContentLength:data.length
+                                                                                                                                  textEncodingName:nil];
+                                                                                      [self.client URLProtocol:self
+                                                                                            didReceiveResponse:response
+                                                                                            cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+                                                                                      
+                                                                                      [self.client URLProtocol:self didLoadData:data];
+                                                                                      [self.client URLProtocolDidFinishLoading:self];
+                                                                                  } else {
+                                                                                      //图片编码失败
+                                                                                      NSError *err = [NSError errorWithDomain:@"image encode error"
+                                                                                                                         code:1
+                                                                                                                     userInfo:nil];
+                                                                                      [self.client URLProtocol:self didFailWithError:err];
+                                                                                  }
                                                                               } else {
-                                                                                  //图片编码失败
-                                                                                  NSError *err = [NSError errorWithDomain:@"image encode error"
-                                                                                                                     code:1
-                                                                                                                 userInfo:nil];
-                                                                                  [self.client URLProtocol:self didFailWithError:err];
+                                                                                  //图片下载失败
+                                                                                  [self.client URLProtocol:self didFailWithError:error];
                                                                               }
-                                                                          } else {
-                                                                              //图片下载失败
-                                                                              [self.client URLProtocol:self didFailWithError:error];
-                                                                          }
-                                                                          //清空标志位
-                                                                          [NSURLProtocol removePropertyForKey:SDWebViewRequestHasInitKey inRequest:mutableReqeust];
-                                                                      }];
+                                                                              //清空标志位
+                                                                              [NSURLProtocol removePropertyForKey:SDWebViewRequestHasInitKey inRequest:mutableReqeust];
+                                                                          }];
+    });
 }
 
 
